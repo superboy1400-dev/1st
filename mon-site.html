@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Site</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, serif;
+      background-color: #ff0000;
+      color: #f0ece4;
+      transition: background-color 0.4s;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .logo { font-size: 20px; letter-spacing: 2px; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: #f0ece4; }
+
+    /* ── SECTION HÉRO ── */
+    .hero {
+      padding: 100px 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: #ddd;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #f0ece4;
+      color: #0f0f0f;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: opacity 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    /* ── SECTION CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #2a2a2a;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    .card {
+      background: #cc0000;
+      padding: 40px;
+    }
+
+    .card-num {
+      font-size: 12px;
+      color: #ffaaaa;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #ffcccc;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <span class="logo">JAROD</span>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Projets</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- SECTION HÉRO -->
+  <section class="hero">
+    <h1>Je mange des <br>coquillettes au fromage.</h1>
+    <p>Je crée des sites internet modernes et performants pour des clients partout dans le monde.</p>
+    <a href="#" class="btn">Voir mon paff</a>
+  </section>
+
+  <!-- SECTION CARDS -->
+  <section class="cards">
+    <div class="card">
+      <p class="card-num">01</p>
+      <h3>Design</h3>
+      <p>Des interfaces claires, pensées pour l'utilisateur.</p>
+    </div>
+    <div class="card">
+      <p class="card-num">02</p>
+      <h3>Développement</h3>
+      <p>Du code propre et maintenable, sans libraries inutiles.</p>
+    </div>
+    <div class="card">
+      <p class="card-num">03</p>
+      <h3>Livraison</h3>
+      <p>Rapide, efficace, avec un suivi clair à chaque étape.</p>
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const btn = document.querySelector('.btn');
+    btn.addEventListener('click', function() {
+      const couleur = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      document.body.style.backgroundColor = couleur;
+    });
+  </script>
+
+</body>
+</html>
